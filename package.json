@@ -1,6 +1,6 @@
 {
   "name": "testgen-cli",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "AI-powered unit test generation CLI tool for PHP, JavaScript, and TypeScript",
   "main": "dist/index.js",
   "bin": {
