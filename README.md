@@ -5,7 +5,7 @@ AI-powered test generation for your codebase. Generate comprehensive unit tests 
 [![npm version](https://badge.fury.io/js/%40ahmad-tayh%2Ftestgen-cli.svg)](https://www.npmjs.com/package/@ahmad-tayh/testgen-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Demo](https://raw.githubusercontent.com/Ahmad-Tayh2/testgen-cli/main/demo.gif)
+![Demo](demo.gif)
 
 ## Features
 
