@@ -2,8 +2,10 @@
 
 AI-powered test generation for your codebase. Generate comprehensive unit tests for PHP, JavaScript, and TypeScript with a single command.
 
-[![npm version](https://badge.fury.io/js/%40testgen%2Fcli.svg)](https://www.npmjs.com/package/@testgen/cli)
+[![npm version](https://badge.fury.io/js/%40ahmad-tayh%2Ftestgen-cli.svg)](https://www.npmjs.com/package/@ahmad-tayh/testgen-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![Demo](https://raw.githubusercontent.com/Ahmad-Tayh2/testgen-cli/main/demo.gif)
 
 ## Features
 
@@ -16,7 +18,7 @@ AI-powered test generation for your codebase. Generate comprehensive unit tests 
 ## Installation
 
 ```bash
-npm install -g @testgen/cli
+npm install -g @ahmad-tayh/testgen-cli
 ```
 
 ## Quick Start
@@ -46,98 +48,23 @@ testgen generate src/components/Button.tsx
 testgen status
 ```
 
-## Commands
-
-### `testgen login`
-
-Authenticate with your TestGen account. You'll need to provide your email and password.
-
-```bash
-testgen login
-```
-
-### `testgen generate <file>`
-
-Generate unit tests for a file. The language and test framework are automatically detected from the file extension.
-
-```bash
-testgen generate src/UserService.php
-testgen generate src/utils/helpers.js
-testgen generate src/components/Button.tsx
-```
-
-**Options:**
-- File must exist and be readable
-- Supported extensions: `.php`, `.js`, `.ts`, `.jsx`, `.tsx`
-- Maximum file size: 5MB
-
-### `testgen status`
-
-View your account usage statistics and remaining requests.
-
-```bash
-testgen status
-```
-
-Shows:
-- Requests used this month
-- Requests remaining
-- Account tier
-- Next reset date
-
 ## Supported Languages & Frameworks
 
-| Language   | Test Framework | File Extensions        |
-|------------|----------------|------------------------|
-| PHP        | PHPUnit        | `.php`                 |
-| JavaScript | Jest           | `.js`, `.jsx`          |
-| TypeScript | Jest           | `.ts`, `.tsx`          |
-
-## Configuration
-
-### Environment Variables
-
-- `TESTGEN_API_URL`: API endpoint (default: `http://localhost:8000/api`)
-
-For production:
-```bash
-export TESTGEN_API_URL=https://api.testgen.dev/api
-```
-
-See [.env.example](.env.example) for more details.
+| Language   | Test Framework | File Extensions |
+| ---------- | -------------- | --------------- |
+| PHP        | PHPUnit        | `.php`          |
+| JavaScript | Jest           | `.js`, `.jsx`   |
+| TypeScript | Jest           | `.ts`, `.tsx`   |
 
 ### Config File
 
 Authentication tokens and preferences are stored in:
+
 ```
 ~/.testgen/config.json
 ```
 
 This file is automatically created and managed by the CLI.
-
-## Examples
-
-### Generate tests for a PHP service
-
-```bash
-testgen generate app/Services/UserService.php
-```
-
-Output:
-```
-tests/Unit/Services/UserServiceTest.php
-```
-
-### Generate tests for a TypeScript utility
-
-```bash
-testgen generate src/utils/validators.ts
-```
-
-Output:
-```
-src/utils/__tests__/validators.test.ts
-```
 
 ## Development
 

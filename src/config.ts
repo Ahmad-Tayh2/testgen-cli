@@ -6,10 +6,11 @@
 export const config = {
   /**
    * API Configuration
-   * Change TESTGEN_API_URL environment variable to point to production
+   * Defaults to production API
+   * Set TESTGEN_API_URL environment variable to override
    */
   api: {
-    baseUrl: process.env.TESTGEN_API_URL || 'http://localhost:8000/api',
+    baseUrl: process.env.TESTGEN_API_URL || 'https://api.testgen.io/api',
     endpoints: {
       register: '/auth/register',
       login: '/auth/login',
@@ -33,7 +34,7 @@ export const config = {
    * File Validation
    */
   validation: {
-    maxFileSize: 5 * 1024 * 1024, // 5MB
+    maxFileSize: 0.5 * 1024 * 1024, // 0.5MB
     supportedExtensions: ['.php', '.js', '.ts', '.jsx', '.tsx'],
   },
 };
