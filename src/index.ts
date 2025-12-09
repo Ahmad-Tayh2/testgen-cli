@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import 'dotenv/config';
 import { Command } from 'commander';
+import 'dotenv/config';
 import { generateCommand } from './commands/generate';
 import { loginCommand } from './commands/login';
 import { statusCommand } from './commands/status';
