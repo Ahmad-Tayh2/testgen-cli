@@ -2,7 +2,7 @@
 
 AI-powered test generation for your codebase. Generate comprehensive unit tests for PHP, JavaScript, and TypeScript with a single command.
 
-[![npm version](https://badge.fury.io/js/%40ahmad-tayh%2Ftestgen-cli.svg)](https://www.npmjs.com/package/@ahmad-tayh/testgen-cli)
+[![npm version](https://badge.fury.io/js/testgen-cli.svg)](https://www.npmjs.com/package/testgen-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ![Demo](demo.gif)
@@ -18,7 +18,7 @@ AI-powered test generation for your codebase. Generate comprehensive unit tests 
 ## Installation
 
 ```bash
-npm install -g @ahmad-tayh/testgen-cli
+npm install -g testgen-cli
 ```
 
 ## Quick Start
