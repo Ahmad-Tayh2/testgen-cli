@@ -1,0 +1,41 @@
+# Development files
+node_modules/
+src/
+*.log
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# Build files
+tsconfig.json
+tsconfig.*.json
+
+# Git files
+.git/
+.gitignore
+
+# CI files
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation (keep only essentials)
+docs/
+
+# Temporary files
+tmp/
+temp/
