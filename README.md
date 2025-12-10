@@ -1,9 +1,26 @@
 # TestGen CLI
 
-AI-powered test generation for your codebase. Generate comprehensive unit tests for PHP, JavaScript, and TypeScript with a single command.
+> AI-powered test generation for your codebase. Generate comprehensive unit tests for PHP, JavaScript, and TypeScript with a single command.
 
 [![npm version](https://badge.fury.io/js/testgen-cli.svg)](https://www.npmjs.com/package/testgen-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 🚧 Early Access Notice
+
+**This is an early-access technical preview of the TestGen CLI.**
+
+The API backend will go live shortly — your CLI will start generating tests automatically once the service is activated. We're excited by the early interest and working hard to get the API online!
+
+**What to expect:**
+- ✅ CLI installation and setup works now
+- ⏳ Test generation will be available once API is live
+- 📧 Follow [@Ahmad-Tayh2](https://github.com/Ahmad-Tayh2) for updates
+
+Thank you for your patience and support! 🙏
+
+---
 
 ![Demo](demo.gif)
 
