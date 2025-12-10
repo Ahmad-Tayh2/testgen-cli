@@ -1,21 +1,29 @@
-MIT License
+Elastic License 2.0
 
-Copyright (c) 2025 TestGen
+This license applies to the work that includes this file.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Your use of the work is subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. You may use, copy, distribute, make available, and prepare derivative works
+   of the work, in each case subject to the limitations below.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. You may not provide the work to third parties as a hosted or managed service,
+   where the value of the service derives, entirely or substantially, from the
+   work itself.
+
+3. You may not move, change, disable, or circumvent any license key functionality
+   in the work, nor may you remove or obscure any functionality that checks or
+   enforces license restrictions.
+
+4. You may not alter, remove, or obscure any licensing, copyright, or other
+   notices of the licensor in the work.
+
+5. The work is provided "as-is" and without warranty of any kind, express or
+   implied. The licensor is not liable for any damages arising from your use of
+   the work.
+
+If you comply with the conditions above, you may use the work for commercial or
+non-commercial purposes.
+
+For more information, see:
+https://www.elastic.co/licensing/elastic-license
