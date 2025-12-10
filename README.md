@@ -14,6 +14,7 @@
 The API backend will go live shortly — your CLI will start generating tests automatically once the service is activated. We're excited by the early interest and working hard to get the API online!
 
 **What to expect:**
+
 - ✅ CLI installation and setup works now
 - ⏳ Test generation will be available once API is live
 - 📧 Follow [@Ahmad-Tayh2](https://github.com/Ahmad-Tayh2) for updates
@@ -141,7 +142,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for deta
 
 ## Links
 
-- [npm Package](https://www.npmjs.com/package/@testgen/cli)
+- [npm Package](https://www.npmjs.com/package/testgen-cli)
 - [GitHub Repository](https://github.com/Ahmad-Tayh2/testgen-cli)
 - [Issue Tracker](https://github.com/Ahmad-Tayh2/testgen-cli/issues)
 

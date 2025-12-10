@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/Ahmad-Tayh2/testgen-cli/issues"
   },
-  "homepage": "https://github.com/Ahmad-Tayh2/testgen-cli#readme",
+  "homepage": "https://testorix.dev/",
   "engines": {
     "node": ">=18.0.0"
   },

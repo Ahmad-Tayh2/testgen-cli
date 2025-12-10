@@ -10,7 +10,7 @@ export const config = {
    * Set TESTGEN_API_URL environment variable to override
    */
   api: {
-    baseUrl: process.env.TESTGEN_API_URL || 'https://api.testgen.io/api',
+    baseUrl: process.env.TESTGEN_API_URL || 'http://217.182.206.237:8000/api',
     endpoints: {
       register: '/auth/register',
       login: '/auth/login',
