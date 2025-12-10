@@ -3,6 +3,7 @@
   "version": "0.1.3",
   "description": "AI-powered unit test generation CLI tool for PHP, JavaScript, and TypeScript",
   "main": "dist/index.js",
+  "preferGlobal": true,
   "bin": {
     "testgen": "dist/index.js"
   },

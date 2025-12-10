@@ -8,8 +8,10 @@ export async function statusCommand(): Promise<void> {
     // Validate authentication
     const config = Config.load();
     if (!config?.apiKey) {
-      console.error(chalk.red('✗ Not logged in'));
-      console.log(chalk.gray('Run'), chalk.cyan('testgen login'), chalk.gray('to authenticate'));
+      console.log(chalk.yellow('\n⚠ You need to login first\n'));
+      console.log(chalk.gray('Run:'), chalk.cyan('testgen login'));
+      console.log(chalk.gray('Or register at:'), chalk.cyan.underline('https://testorix.dev/register'));
+      console.log();
       process.exit(1);
     }
 

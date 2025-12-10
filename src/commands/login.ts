@@ -78,6 +78,15 @@ export async function loginCommand() {
   } catch (error: any) {
     spinner.fail(chalk.red('Login failed'));
     console.error(chalk.red(`\n${error.message}\n`));
+
+    // Show registration link
+    console.log(chalk.yellow("Don't have an account yet?"));
+    console.log(
+      chalk.gray('Register at:'),
+      chalk.cyan.underline('https://testorix.dev/register')
+    );
+    console.log();
+
     process.exit(1);
   }
 }
