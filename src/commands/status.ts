@@ -96,7 +96,15 @@ export async function statusCommand(): Promise<void> {
 
     } catch (error: any) {
       spinner.fail('Failed to fetch statistics');
-      if (error.response?.data?.error) {
+      
+      // Check if it's an invalid API key error
+      if (error.response?.status === 401 || error.message?.includes('Invalid API key')) {
+        console.log(chalk.yellow('\n⚠ Authentication failed\n'));
+        console.log(chalk.gray('Your session may have expired or your API key is invalid.'));
+        console.log(chalk.gray('Please login again:'), chalk.cyan('testgen login'));
+        console.log(chalk.gray('Or register at:'), chalk.cyan.underline('https://testorix.dev/register'));
+        console.log();
+      } else if (error.response?.data?.error) {
         console.error(chalk.red('Error:'), error.response.data.error);
       } else {
         console.error(chalk.red('Error:'), error.message);

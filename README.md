@@ -23,15 +23,29 @@
 npm install -g testgen-cli
 ```
 
-## Quick Start
+## Getting Started
 
-1. **Login to your account:**
+### 1. Create an Account
+
+Don't have an account yet? Register at:
+
+👉 **[https://testorix.dev/register](https://testorix.dev/register)**
+
+You'll receive your login credentials to use with the CLI.
+
+### 2. Login
+
+Once you have an account, authenticate with the CLI:
 
 ```bash
 testgen login
 ```
 
-2. **Generate tests for a file:**
+Enter your email and password when prompted.
+
+## Quick Start
+
+1. **Generate tests for a file:**
 
 ```bash
 # PHP
@@ -44,7 +58,7 @@ testgen generate src/utils/helpers.js
 testgen generate src/components/Button.tsx
 ```
 
-3. **Check your usage:**
+2. **Check your usage:**
 
 ```bash
 testgen status
