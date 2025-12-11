@@ -10,7 +10,10 @@ export async function statusCommand(): Promise<void> {
     if (!config?.apiKey) {
       console.log(chalk.yellow('\n⚠ You need to login first\n'));
       console.log(chalk.gray('Run:'), chalk.cyan('testgen login'));
-      console.log(chalk.gray('Or register at:'), chalk.cyan.underline('https://testorix.dev/register'));
+      console.log(
+        chalk.gray('Or register at:'),
+        chalk.cyan.underline('https://testorix.dev/register')
+      );
       console.log();
       process.exit(1);
     }
@@ -38,9 +41,15 @@ export async function statusCommand(): Promise<void> {
       console.log();
 
       // Usage stats
-      console.log(chalk.bold('Total Tests Generated:'), chalk.green(stats.total_tests_generated));
+      console.log(
+        chalk.bold('Total Tests Generated:'),
+        chalk.green(stats.total_tests_generated)
+      );
       if (stats.failed_generations > 0) {
-        console.log(chalk.bold('Failed Generations:'), chalk.red(stats.failed_generations));
+        console.log(
+          chalk.bold('Failed Generations:'),
+          chalk.red(stats.failed_generations)
+        );
       }
       console.log();
 
@@ -48,24 +57,34 @@ export async function statusCommand(): Promise<void> {
       if (!stats.is_premium) {
         const percentage = (stats.monthly_used / stats.monthly_limit) * 100;
         const remaining = stats.remaining_requests;
-        
+
         console.log(chalk.bold('Monthly Quota:'));
-        console.log(chalk.gray('  Used:'), `${stats.monthly_used}/${stats.monthly_limit}`);
-        console.log(chalk.gray('  Remaining:'), chalk[remaining <= 5 ? 'yellow' : 'green'](remaining));
-        
+        console.log(
+          chalk.gray('  Used:'),
+          `${stats.monthly_used}/${stats.monthly_limit}`
+        );
+        console.log(
+          chalk.gray('  Remaining:'),
+          chalk[remaining <= 5 ? 'yellow' : 'green'](remaining)
+        );
+
         // Progress bar
         const barLength = 30;
         const filled = Math.round((percentage / 100) * barLength);
         const empty = barLength - filled;
         const bar = '█'.repeat(filled) + '░'.repeat(empty);
-        console.log(chalk.gray('  Progress:'), bar, `${percentage.toFixed(1)}%`);
-        
+        console.log(
+          chalk.gray('  Progress:'),
+          bar,
+          `${percentage.toFixed(1)}%`
+        );
+
         if (stats.reset_date) {
           const resetDate = new Date(stats.reset_date);
           console.log(chalk.gray('  Resets:'), resetDate.toLocaleDateString());
         }
         console.log();
-        
+
         if (remaining <= 5) {
           console.log(chalk.yellow('⚠ Running low on requests!'));
           console.log(chalk.gray('  Upgrade to premium for unlimited access'));
@@ -93,16 +112,28 @@ export async function statusCommand(): Promise<void> {
       }
 
       console.log(chalk.cyan('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
-
     } catch (error: any) {
       spinner.fail('Failed to fetch statistics');
-      
+
       // Check if it's an invalid API key error
-      if (error.response?.status === 401 || error.message?.includes('Invalid API key')) {
+      if (
+        error.response?.status === 401 ||
+        error.message?.includes('Invalid API key')
+      ) {
         console.log(chalk.yellow('\n⚠ Authentication failed\n'));
-        console.log(chalk.gray('Your session may have expired or your API key is invalid.'));
-        console.log(chalk.gray('Please login again:'), chalk.cyan('testgen login'));
-        console.log(chalk.gray('Or register at:'), chalk.cyan.underline('https://testorix.dev/register'));
+        console.log(
+          chalk.gray(
+            'Your session may have expired or your API key is invalid.'
+          )
+        );
+        console.log(
+          chalk.gray('Please login again:'),
+          chalk.cyan('testgen login')
+        );
+        console.log(
+          chalk.gray('Or register at:'),
+          chalk.cyan.underline('https://testorix.dev/register')
+        );
         console.log();
       } else if (error.response?.data?.error) {
         console.error(chalk.red('Error:'), error.response.data.error);

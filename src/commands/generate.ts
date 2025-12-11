@@ -152,8 +152,24 @@ export async function generateCommand(filePath: string): Promise<void> {
         console.log();
       } else if (error.response?.data?.error) {
         console.error(chalk.red('Error:'), error.response.data.error);
+        
+        // Check if it's a server-side AI connection error
+        if (error.response.data.error.includes('localhost:11434') || 
+            error.response.data.error.includes('Could not connect to server')) {
+          console.log();
+          console.log(chalk.yellow('⚠ This appears to be a server configuration issue.'));
+          console.log(chalk.gray('The API backend is currently unavailable or misconfigured.'));
+          console.log(chalk.gray('Please try again later or contact support.'));
+        }
       } else {
         console.error(chalk.red('Error:'), error.message);
+        
+        // Check for connection errors
+        if (error.message.includes('ECONNREFUSED') || error.message.includes('connect')) {
+          console.log();
+          console.log(chalk.yellow('⚠ Cannot connect to the API server.'));
+          console.log(chalk.gray('Please check your internet connection and try again.'));
+        }
       }
 
       process.exit(1);
