@@ -7,6 +7,23 @@
 
 ---
 
+## 🚧 TestGen API is Activating...
+
+**You're one of the first early users** — the full service launches in **<48 hours**.
+
+The CLI is ready to install, but test generation will be available once our API backend goes live. We're working around the clock to get everything online!
+
+**What's happening:**
+- ✅ CLI package is published and ready
+- ⏳ API backend launching within 48 hours
+- 🎯 Full test generation will work automatically once live
+
+**Stay updated:** Follow progress at [https://testorix.dev](https://testorix.dev)
+
+Thank you for being an early supporter! 🙏
+
+---
+
 ![Demo](demo.gif)
 
 ## Features
