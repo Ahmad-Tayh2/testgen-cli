@@ -14,6 +14,7 @@
 The CLI is ready to install, but test generation will be available once our API backend goes live. We're working around the clock to get everything online!
 
 **What's happening:**
+
 - ✅ CLI package is published and ready
 - ⏳ API backend launching within 48 hours
 - 🎯 Full test generation will work automatically once live

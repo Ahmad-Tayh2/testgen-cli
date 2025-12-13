@@ -118,7 +118,7 @@ export async function statusCommand(): Promise<void> {
       // Check if it's an invalid API key error
       if (
         error.response?.status === 401 ||
-        error.message?.includes('Invalid API key')
+        error.message?.includes('Invalid API key, try logging in again')
       ) {
         console.log(chalk.yellow('\n⚠ Authentication failed\n'));
         console.log(

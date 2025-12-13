@@ -21,6 +21,7 @@ program
 program
   .command('generate <file>')
   .description('Generate unit tests for a file')
+  .option('-o, --output <path>', 'Specify custom output path for the test file')
   .action(generateCommand);
 
 program

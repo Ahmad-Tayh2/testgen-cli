@@ -32,6 +32,15 @@ export class ApiClient {
     file_content: string;
     file_name: string;
     language?: string;
+    project_context?: {
+      framework?: string;
+      test_framework?: string;
+      project_root: string;
+      test_directory?: string;
+      dependencies?: string[];
+      file_imports?: string[];
+      naming_convention?: 'camelCase' | 'snake_case' | 'PascalCase';
+    };
   }): Promise<{
     success: boolean;
     test_code?: string;
