@@ -1,167 +1,228 @@
 # TestGen CLI
 
-> AI-powered test generation for your codebase. Generate comprehensive unit tests for PHP, JavaScript, and TypeScript with a single command.
+AI-powered test generation for PHP, JavaScript, and TypeScript. Generate comprehensive unit tests with a single command.
 
 [![npm version](https://badge.fury.io/js/testgen-cli.svg)](https://www.npmjs.com/package/testgen-cli)
 [![License](https://img.shields.io/badge/License-Elastic%202.0-blue.svg)](LICENSE)
 
----
-
-## 🚧 TestGen API is Activating...
-
-**You're one of the first early users** — the full service launches in **<48 hours**.
-
-The CLI is ready to install, but test generation will be available once our API backend goes live. We're working around the clock to get everything online!
-
-**What's happening:**
-
-- ✅ CLI package is published and ready
-- ⏳ API backend launching within 48 hours
-- 🎯 Full test generation will work automatically once live
-
-**Stay updated:** Follow progress at [https://testorix.dev](https://testorix.dev)
-
-Thank you for being an early supporter! 🙏
-
----
-
 ![Demo](demo.gif)
+
+---
+
+## Quick Start
+
+```bash
+# 1. Install globally
+npm install -g testgen-cli
+
+# 2. Create account and login
+testgen login
+
+# 3. Generate tests
+testgen generate src/your-file.js
+```
+
+**Don't have an account?** → [Create one here](https://testorix.dev/register)
+
+---
 
 ## Features
 
-- 🤖 **AI-Powered**: Leverages advanced LLMs to generate intelligent test cases
-- 🌐 **Multi-Language**: Supports PHP (PHPUnit), JavaScript (Jest), and TypeScript (Jest)
-- ⚡ **Fast**: Generates tests in seconds
-- 📝 **Comprehensive**: Creates thorough test coverage with edge cases
-- 🎨 **Review & Edit**: Shows diff before saving, allowing you to review and edit
+- 🤖 **AI-Powered** - Generates intelligent test cases with edge cases
+- 🌐 **Multi-Language** - PHP (PHPUnit/Pest), JavaScript (Jest), TypeScript (Jest)
+- ⚡ **Fast** - Tests generated in seconds
+- 🎨 **Review Before Save** - See a diff and approve changes
+- 📊 **Smart Output** - Clean minimal mode, verbose mode with `--verbose`
 
-## Installation
+---
+
+## Installation Options
+
+### Option 1: Global (Recommended)
+
+Install once, use in any project:
 
 ```bash
 npm install -g testgen-cli
 ```
 
-## Getting Started
+Now you can use `testgen` anywhere:
 
-### 1. Create an Account
+```bash
+cd ~/my-project
+testgen generate src/api/users.js
 
-Don't have an account yet? Register at:
+cd ~/another-project
+testgen generate app/Models/User.php
+```
 
-👉 **[https://testorix.dev/register](https://testorix.dev/register)**
+### Option 2: Project-Specific
 
-You'll receive your login credentials to use with the CLI.
+Install in your project as a dev dependency:
 
-### 2. Login
+```bash
+npm install --save-dev testgen-cli
+```
 
-Once you have an account, authenticate with the CLI:
+Use with npx:
+
+```bash
+npx testgen generate src/components/Button.tsx
+```
+
+Or add to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "test:generate": "testgen generate"
+  }
+}
+```
+
+```bash
+npm run test:generate src/utils/helpers.js
+```
+
+### Option 3: Run Without Installing
+
+```bash
+npx testgen-cli generate src/your-file.ts
+```
+
+---
+
+## Usage Examples
+
+### Generate Test for PHP File
+
+```bash
+testgen generate app/Services/PaymentService.php
+```
+
+**Output:** `tests/Unit/Services/PaymentServiceTest.php`
+
+### Generate Test for JavaScript File
+
+```bash
+testgen generate src/utils/formatters.js
+```
+
+**Output:** `src/utils/formatters.test.js`
+
+### Generate Test for TypeScript File
+
+```bash
+testgen generate src/hooks/useAuth.ts
+```
+
+**Output:** `src/hooks/useAuth.test.ts`
+
+### Custom Output Location
+
+```bash
+testgen generate src/api.js --output tests/integration/api.test.js
+```
+
+### See Detailed Generation Info
+
+```bash
+testgen generate src/calculator.ts --verbose
+```
+
+---
+
+## Commands
+
+```bash
+testgen login              # Authenticate with your account
+testgen generate <file>    # Generate test for a file
+testgen status             # Check your usage quota
+testgen --help             # Show help
+testgen --version          # Show version
+```
+
+### Generate Command Options
+
+```bash
+testgen generate <file> [options]
+
+Options:
+  -o, --output <path>    Custom output path for test file
+  -v, --verbose          Show detailed generation information
+```
+
+---
+
+## Supported Languages
+
+| Language   | Test Framework | File Extensions | Output Location               |
+| ---------- | -------------- | --------------- | ----------------------------- |
+| PHP        | PHPUnit, Pest  | `.php`          | `tests/Unit/YourFileTest.php` |
+| JavaScript | Jest           | `.js`, `.jsx`   | `your-file.test.js`           |
+| TypeScript | Jest           | `.ts`, `.tsx`   | `your-file.test.ts`           |
+
+**Limits:**
+
+- File size: 5MB max
+- Free tier: 20 tests per month
+
+---
+
+## Common Issues
+
+### "Authentication failed"
+
+Run login again:
 
 ```bash
 testgen login
 ```
 
-Enter your email and password when prompted.
+### "Monthly limit reached"
 
-## Quick Start
+You've used your 20 free tests. [Join waitlist](https://testorix.dev/#beta) for more.
 
-1. **Generate tests for a file:**
+### "Command not found: testgen"
 
-```bash
-# PHP
-testgen generate src/UserService.php
-
-# JavaScript
-testgen generate src/utils/helpers.js
-
-# TypeScript
-testgen generate src/components/Button.tsx
-```
-
-2. **Check your usage:**
+If globally installed but command not found:
 
 ```bash
-testgen status
+npm install -g testgen-cli
 ```
 
-## Supported Languages & Frameworks
-
-| Language   | Test Framework | File Extensions |
-| ---------- | -------------- | --------------- |
-| PHP        | PHPUnit        | `.php`          |
-| JavaScript | Jest           | `.js`, `.jsx`   |
-| TypeScript | Jest           | `.ts`, `.tsx`   |
-
-### Config File
-
-Authentication tokens and preferences are stored in:
-
-```
-~/.testgen/config.json
-```
-
-This file is automatically created and managed by the CLI.
-
-## Development
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
-
-### Quick Start for Development
+Or use without installing:
 
 ```bash
-# Clone the repository
-git clone https://github.com/Ahmad-Tayh2/testgen-cli.git
-cd testgen-cli
-
-# Install dependencies
-npm install
-
-# Build
-npm run build
-
-# Link for local testing
-npm link
-
-# Use locally
-testgen --help
+npx testgen-cli generate src/file.js
 ```
-
-## Troubleshooting
-
-### "Failed to connect to API"
-
-1. Check if `TESTGEN_API_URL` is set correctly
-2. Verify the API is running and accessible
-3. Check your internet connection
-
-### "Authentication failed"
-
-1. Run `testgen login` again
-2. Ensure your credentials are correct
-3. Check if your account is active
 
 ### "File too large"
 
-The maximum file size is 5MB. Consider breaking down large files into smaller modules.
-
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-## License
-
-[MIT](LICENSE)
-
-## Support
-
-- 🐛 [Report bugs](https://github.com/Ahmad-Tayh2/testgen-cli/issues)
-- 💡 [Request features](https://github.com/Ahmad-Tayh2/testgen-cli/issues)
-- 📖 [Documentation](https://github.com/Ahmad-Tayh2/testgen-cli#readme)
-
-## Links
-
-- [npm Package](https://www.npmjs.com/package/testgen-cli)
-- [GitHub Repository](https://github.com/Ahmad-Tayh2/testgen-cli)
-- [Issue Tracker](https://github.com/Ahmad-Tayh2/testgen-cli/issues)
+Maximum file size is 5MB. Split large files into smaller modules.
 
 ---
 
-Made with ❤️ by the TestGen team
+## What You Get
+
+✅ Comprehensive test coverage  
+✅ Smart assertions and edge cases  
+✅ Framework-specific best practices  
+✅ Mocking and dependency injection  
+✅ Tests that actually run
+
+**Free tier:** 10 tests/month  
+**Need more?** [Join the waitlist](https://testorix.dev/#beta)
+
+---
+
+## Links
+
+- **Create Account:** [testorix.dev/register](https://testorix.dev/register)
+- **npm Package:** [npmjs.com/package/testgen-cli](https://www.npmjs.com/package/testgen-cli)
+- **GitHub:** [github.com/Ahmad-Tayh2/testgen-cli](https://github.com/Ahmad-Tayh2/testgen-cli)
+- **Report Issues:** [github.com/Ahmad-Tayh2/testgen-cli/issues](https://github.com/Ahmad-Tayh2/testgen-cli/issues)
+
+---
+
+**License:** [Elastic License 2.0](LICENSE)

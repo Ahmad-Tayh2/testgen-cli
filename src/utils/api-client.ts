@@ -46,6 +46,7 @@ export class ApiClient {
     test_code?: string;
     test_file_name?: string;
     remaining_requests?: number;
+    generation_id?: number;
     error?: string;
     message?: string;
     limit?: number;
@@ -85,5 +86,40 @@ export class ApiClient {
       password,
     });
     return response.data;
+  }
+
+  async submitFeedback(data: {
+    generation_id?: number;
+    question_type: 'immediate' | 'problem' | 'retention';
+    was_useful?: boolean;
+    problem_category?: number;
+    would_use_again?: boolean;
+  }): Promise<any> {
+    try {
+      const response = await this.client.post(
+        config.api.endpoints.feedback,
+        data
+      );
+      return response.data;
+    } catch (error) {
+      // Fail silently
+      return null;
+    }
+  }
+
+  async getFeedbackStatus(): Promise<{
+    has_answered_retention: boolean;
+    total_generations: number;
+    can_ask_retention: boolean;
+  } | null> {
+    try {
+      const response = await this.client.get(
+        config.api.endpoints.feedbackStatus
+      );
+      return response.data;
+    } catch (error) {
+      // Fail silently
+      return null;
+    }
   }
 }

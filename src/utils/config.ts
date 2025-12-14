@@ -6,6 +6,8 @@ interface ConfigData {
   apiKey?: string;
   email?: string;
   apiUrl?: string;
+  retentionQuestionAnswered?: boolean;
+  hasSeenTips?: boolean;
 }
 
 export class ConfigManager {

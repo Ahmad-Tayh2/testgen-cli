@@ -94,8 +94,9 @@ export class ProjectContextExtractor {
     } else {
       // JavaScript/TypeScript
       // Check for snake_case function/variable names
-      const hasSnakeCase =
-        /(?:const|let|var|function)\s+\w+_\w+/.test(fileContent);
+      const hasSnakeCase = /(?:const|let|var|function)\s+\w+_\w+/.test(
+        fileContent
+      );
       if (hasSnakeCase) return 'snake_case';
 
       // Check for PascalCase (classes/components)

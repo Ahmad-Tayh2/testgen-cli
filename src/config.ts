@@ -19,6 +19,8 @@ export const config = {
       usage: '/usage',
       user: '/user',
       health: '/health',
+      feedback: '/feedback',
+      feedbackStatus: '/feedback/status',
     },
   },
 

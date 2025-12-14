@@ -9,6 +9,7 @@ export interface ApiResponse {
   test_code?: string;
   test_file_name?: string;
   remaining_requests?: number;
+  generation_id?: number;
   error?: string;
   message?: string;
   limit?: number;
