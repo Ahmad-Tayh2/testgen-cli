@@ -87,8 +87,10 @@ npm run test:generate src/utils/helpers.js
 ### Option 3: Run Without Installing
 
 ```bash
-npx testgen-cli generate src/your-file.ts
+npx testgen generate src/your-file.ts
 ```
+
+> Note: First run downloads the package temporarily
 
 ---
 
