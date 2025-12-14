@@ -166,8 +166,8 @@ Options:
 
 **Limits:**
 
-- File size: 5MB max
-- Free tier: 20 tests per month
+- File size: 0.5MB max
+- Free tier: 10 tests per month
 
 ---
 
@@ -183,7 +183,7 @@ testgen login
 
 ### "Monthly limit reached"
 
-You've used your 20 free tests. [Join waitlist](https://testorix.dev/#beta) for more.
+You've used your 10 free tests. [Join waitlist](https://testorix.dev/#beta) for more.
 
 ### "Command not found: testgen"
 
@@ -201,7 +201,7 @@ npx testgen-cli generate src/file.js
 
 ### "File too large"
 
-Maximum file size is 5MB. Split large files into smaller modules.
+Maximum file size is 0.5MB. Split large files into smaller modules.
 
 ---
 
