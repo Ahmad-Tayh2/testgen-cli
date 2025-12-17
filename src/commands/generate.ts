@@ -13,18 +13,8 @@ export async function generateCommand(
   options?: { output?: string; verbose?: boolean }
 ): Promise<void> {
   try {
-    // Step 1: Validate authentication
+    // Step 1: Load config (optional for authentication)
     const config = Config.load();
-    if (!config?.apiKey) {
-      console.log(chalk.yellow('\n⚠ You need to login first\n'));
-      console.log(chalk.gray('Run:'), chalk.cyan('testgen login'));
-      console.log(
-        chalk.gray('Or register at:'),
-        chalk.cyan.underline('https://testorix.dev/register')
-      );
-      console.log();
-      process.exit(1);
-    }
 
     // Step 2: Resolve file path (absolute)
     const absolutePath = path.resolve(filePath);
@@ -226,7 +216,7 @@ export async function generateCommand(
 
     const startTime = Date.now();
 
-    const apiClient = new ApiClient(config.apiKey);
+    const apiClient = new ApiClient(config?.apiKey);
 
     try {
       const response = await apiClient.generateTest({
@@ -306,7 +296,7 @@ export async function generateCommand(
       }
 
       // Ask for immediate feedback if generation_id is available
-      if (response.generation_id && config.apiKey) {
+      if (response.generation_id && config?.apiKey) {
         await askImmediateFeedback(response.generation_id, config.apiKey);
       }
 
@@ -316,7 +306,7 @@ export async function generateCommand(
         response.remaining_requests >= 10;
       const randomChance = Math.random() < 0.1; // 10% chance
       const showTips =
-        options?.verbose || !config.hasSeenTips || isFullQuota || randomChance;
+        options?.verbose || !config?.hasSeenTips || isFullQuota || randomChance;
 
       if (showTips) {
         console.log();
@@ -339,12 +329,12 @@ export async function generateCommand(
           }
         }
 
-        if (!options?.verbose && !config.hasSeenTips) {
+        if (!options?.verbose && !config?.hasSeenTips) {
           console.log(chalk.gray('        --verbose for detailed output'));
         }
 
         // Mark tips as seen
-        if (!config.hasSeenTips) {
+        if (config && !config.hasSeenTips) {
           Config.save({ ...config, hasSeenTips: true });
         }
       }

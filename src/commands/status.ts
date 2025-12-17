@@ -5,21 +5,11 @@ import { Config } from '../utils/config';
 
 export async function statusCommand(): Promise<void> {
   try {
-    // Validate authentication
+    // Load config (optional for authentication)
     const config = Config.load();
-    if (!config?.apiKey) {
-      console.log(chalk.yellow('\n⚠ You need to login first\n'));
-      console.log(chalk.gray('Run:'), chalk.cyan('testgen login'));
-      console.log(
-        chalk.gray('Or register at:'),
-        chalk.cyan.underline('https://testorix.dev/register')
-      );
-      console.log();
-      process.exit(1);
-    }
 
     const spinner = ora('Fetching usage statistics...').start();
-    const apiClient = new ApiClient(config.apiKey);
+    const apiClient = new ApiClient(config?.apiKey);
 
     try {
       const stats = await apiClient.getUsageStats();
@@ -32,7 +22,9 @@ export async function statusCommand(): Promise<void> {
       console.log();
 
       // Account info
-      console.log(chalk.bold('Account:'), config.email);
+      if (config?.email) {
+        console.log(chalk.bold('Account:'), config.email);
+      }
       if (stats.is_premium) {
         console.log(chalk.bold('Plan:'), chalk.green('Premium ✨'));
       } else {

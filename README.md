@@ -9,20 +9,25 @@ AI-powered test generation for PHP, JavaScript, and TypeScript. Generate compreh
 
 ---
 
+## ✨ No Login Required - Start Generating Tests Instantly!
+
+You can now generate tests **without creating an account or logging in**. Just install and start testing!
+
+---
+
 ## Quick Start
 
 ```bash
 # 1. Install globally
 npm install -g testgen-cli
 
-# 2. Create account and login
-testgen login
-
-# 3. Generate tests
+# 2. Generate tests (no login required!)
 testgen generate src/your-file.js
 ```
 
-**Don't have an account?** → [Create one here](https://testorix.dev/register)
+**That's it!** Start generating tests immediately without any authentication.
+
+**Want early access to premium features?** → [Create an account](https://testorix.dev/register)
 
 ---
 
@@ -40,7 +45,7 @@ testgen generate src/your-file.js
 
 ### Option 1: Global (Recommended)
 
-Install once, use in any project:
+Install once, use in any project - **no login required**:
 
 ```bash
 npm install -g testgen-cli
@@ -84,13 +89,13 @@ Or add to your `package.json`:
 npm run test:generate src/utils/helpers.js
 ```
 
-### Option 3: Run Without Installing
+### Option 3: Run Without Installing (Instant Start!)
 
 ```bash
 npx testgen generate src/your-file.ts
 ```
 
-> Note: First run downloads the package temporarily
+> Note: First run downloads the package temporarily - **no account needed!**
 
 ---
 
@@ -137,9 +142,9 @@ testgen generate src/calculator.ts --verbose
 ## Commands
 
 ```bash
-testgen login              # Authenticate with your account
-testgen generate <file>    # Generate test for a file
-testgen status             # Check your usage quota
+testgen generate <file>    # Generate test for a file (no login required!)
+testgen login              # (Optional) Login for premium features
+testgen status             # Check your usage quota (requires login)
 testgen --help             # Show help
 testgen --version          # Show version
 ```
@@ -167,7 +172,9 @@ Options:
 **Limits:**
 
 - File size: 0.5MB max
-- Free tier: 10 tests per month
+- Without login: Limited tests (managed by backend)
+- With free account: 10 tests per month
+- Premium: Early access to premium features
 
 ---
 
@@ -175,15 +182,17 @@ Options:
 
 ### "Authentication failed"
 
-Run login again:
+This only happens if you're logged in. Run login again:
 
 ```bash
 testgen login
 ```
 
+Or simply use without login - no authentication required!
+
 ### "Monthly limit reached"
 
-You've used your 10 free tests. [Join waitlist](https://testorix.dev/#beta) for more.
+You've used your quota. [Create an account](https://testorix.dev/register) or [join waitlist](https://testorix.dev/#beta) for more.
 
 ### "Command not found: testgen"
 
@@ -207,14 +216,16 @@ Maximum file size is 0.5MB. Split large files into smaller modules.
 
 ## What You Get
 
-✅ Comprehensive test coverage  
-✅ Smart assertions and edge cases  
-✅ Framework-specific best practices  
-✅ Mocking and dependency injection  
+✅ Comprehensive test coverage
+✅ Smart assertions and edge cases
+✅ Framework-specific best practices
+✅ Mocking and dependency injection
 ✅ Tests that actually run
+✅ **No login required** - Start testing immediately!
 
-**Free tier:** 10 tests/month  
-**Need more?** [Join the waitlist](https://testorix.dev/#beta)
+**Anonymous usage:** Limited tests (backend-managed)
+**Free account:** 10 tests/month
+**Premium:** Early access to premium features - [Join the waitlist](https://testorix.dev/#beta)
 
 ---
 
